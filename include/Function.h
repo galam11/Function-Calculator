@@ -8,5 +8,3 @@ public:
     virtual void print(std::ostream& os) const = 0;
     virtual ~Function() = default;
 };
-
-std::ostream& operator<<(std::ostream& os, const Function& func);
