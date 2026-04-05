@@ -10,7 +10,7 @@ public:
 	double eval(double x) const override;
 	void print(std::ostream& os) const override;
 
-	std::shared_ptr<ScaledFunction> scail(double factor) const override;
+	std::shared_ptr<ScaledFunction> scale(double factor) const override;
 	
 public:
 	SimpleFunction* cloneImpl() const override;

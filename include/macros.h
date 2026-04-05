@@ -31,7 +31,7 @@ const std::string DEL_DESC		= "Removes a function from the list by its index";
 const std::string HELP_DESC		= "Displays the help screen with available commands";
 const std::string EXIT_DESC		= "Terminates the program";
 
-const std::string HELP_MESEG =
+const std::string HELP_MESSAGE =
 	std::string("Following is the list of the calculator's available commands:\n") +
 	"\t" + EVAL_USAGE	+ " - " + EVAL_DESC		+ "\n" +
 	"\t" + LOG_USAGE	+ " - " + LOG_DESC		+ "\n" +

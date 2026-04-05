@@ -6,7 +6,7 @@ std::unique_ptr<SimpleFunction> SimpleFunction::clone() const
 	return std::unique_ptr<SimpleFunction>(cloneImpl());
 }
 
-std::shared_ptr<ScaledFunction> SimpleFunction::scail(double factor) const 
+std::shared_ptr<ScaledFunction> SimpleFunction::scale(double factor) const 
 {
 	return std::make_shared<ScaledFunction>(this, factor);
 }

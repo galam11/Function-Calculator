@@ -17,7 +17,7 @@ void ScaledFunction::print(std::ostream& os) const
 	os << ")";
 }
 
-std::shared_ptr<ScaledFunction> ScaledFunction::scail(double factor) const
+std::shared_ptr<ScaledFunction> ScaledFunction::scale(double factor) const
 {
 	return std::make_shared<ScaledFunction>(m_func.get(), m_scale * factor);
 }

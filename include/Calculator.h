@@ -21,7 +21,7 @@ private:
     int functionSize() const;
     bool validIndex(int index) const;
 	bool validSimpleFunctionIndex(int index) const;
-	bool validComplaxFunctionIndex(int index) const;
+	bool validComplexFunctionIndex(int index) const;
 
     void printFunctions() const;
 

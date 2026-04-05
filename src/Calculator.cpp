@@ -88,7 +88,7 @@ bool Calculator::validSimpleFunctionIndex(int index) const
 	return index >= 0 && index < complexFuncStartIndex();
 }
 
-bool Calculator::validComplaxFunctionIndex(int index) const
+bool Calculator::validComplexFunctionIndex(int index) const
 {
 	return index >= complexFuncStartIndex() && index < functionSize();
 }
@@ -185,7 +185,7 @@ void Calculator::handleScale(std::stringstream& streem)
 		return;
 	}
 
-	m_simpleFunctions.push_back(m_simpleFunctions[index]->scail(factor));
+	m_simpleFunctions.push_back(m_simpleFunctions[index]->scale(factor));
 }
 
 void Calculator::handleAdd(std::stringstream& streem)
@@ -231,7 +231,7 @@ void Calculator::handleDel(std::stringstream& streem)
 
 void Calculator::handleHelp()
 {
-	std::cout << HELP_MESEG << std::endl;
+	std::cout << HELP_MESSAGE << std::endl;
 }
 
 void Calculator::handleExit()
