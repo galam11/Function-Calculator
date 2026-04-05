@@ -111,11 +111,11 @@ void Calculator::printFunctions() const
 	}
 }
 
-void Calculator::handleEval(std::stringstream& streem)
+void Calculator::handleEval(std::stringstream& stream)
 {
 	int index = 0 , x = 0;
 
-	if (!(streem >> index) || !validIndex(index) || !(streem >> x))
+	if (!(stream >> index) || !validIndex(index) || !(stream >> x))
 	{
 		std::cout << "Invalid usage - " << EVAL_USAGE << std::endl;
 		return;
@@ -126,10 +126,10 @@ void Calculator::handleEval(std::stringstream& streem)
 
 }
 
-void Calculator::handleLog(std::stringstream& streem)
+void Calculator::handleLog(std::stringstream& stream)
 {
 	double base = 0;
-	if (!(streem >> base) || base <= 1)
+	if (!(stream >> base) || base <= 1)
 	{
 		std::cout << "Invalid usage - " << LOG_USAGE << std::endl;
 		return;
@@ -138,10 +138,10 @@ void Calculator::handleLog(std::stringstream& streem)
 	m_simpleFunctions.push_back(std::make_shared<LogFunction>(base));
 }
 
-void Calculator::handlePoly(std::stringstream& streem)
+void Calculator::handlePoly(std::stringstream& stream)
 {
 	int degree = 0;
-	if (!(streem >> degree) || degree < 0)
+	if (!(stream >> degree) || degree < 0)
 	{
 		std::cout << "Invalid usage - " << POLY_USAGE << std::endl;
 		return;
@@ -151,7 +151,7 @@ void Calculator::handlePoly(std::stringstream& streem)
 	for (int i = 0; i < degree; i++)
 	{
 		double coeff = 0;
-		if (!(streem >> coeff))
+		if (!(stream >> coeff))
 		{
 			std::cout << "Invalid usage - " << POLY_USAGE << std::endl;
 			return;
@@ -163,10 +163,10 @@ void Calculator::handlePoly(std::stringstream& streem)
 	m_simpleFunctions.push_back(std::make_shared<PolynomialFunction>(coeffs));
 }
 
-void Calculator::handleScale(std::stringstream& streem)
+void Calculator::handleScale(std::stringstream& stream)
 {
 	int index = 0;
-	if (!(streem >> index))
+	if (!(stream >> index))
 	{
 		std::cout << "Invalid usage - " << SCALE_USAGE << std::endl;
 		return;
@@ -179,7 +179,7 @@ void Calculator::handleScale(std::stringstream& streem)
 	}
 
 	double factor = 0;
-	if (!(streem >> factor))
+	if (!(stream >> factor))
 	{
 		std::cout << "Invalid usage - " << SCALE_USAGE << std::endl;
 		return;
@@ -188,10 +188,10 @@ void Calculator::handleScale(std::stringstream& streem)
 	m_simpleFunctions.push_back(m_simpleFunctions[index]->scale(factor));
 }
 
-void Calculator::handleAdd(std::stringstream& streem)
+void Calculator::handleAdd(std::stringstream& stream)
 {
 	int index1 = 0, index2 = 0;
-	if (!(streem >> index1) || !validIndex(index1) || !(streem >> index2) || !validIndex(index2))
+	if (!(stream >> index1) || !validIndex(index1) || !(stream >> index2) || !validIndex(index2))
 	{
 		std::cout << "Invalid usage - " << ADD_USAGE << std::endl;
 		return;
@@ -201,10 +201,10 @@ void Calculator::handleAdd(std::stringstream& streem)
 
 }
 
-void Calculator::handleMul(std::stringstream& streem)
+void Calculator::handleMul(std::stringstream& stream)
 {
 	int index1 = 0, index2 = 0;
-	if (!(streem >> index1) || !validIndex(index1) || !(streem >> index2) || !validIndex(index2))
+	if (!(stream >> index1) || !validIndex(index1) || !(stream >> index2) || !validIndex(index2))
 	{
 		std::cout << "Invalid usage - " << MUL_USAGE << std::endl;
 		return;
@@ -213,10 +213,10 @@ void Calculator::handleMul(std::stringstream& streem)
 	m_complexFunction.push_back(std::make_shared<MulFunction>(getFunction(index1), getFunction(index2)));
 }
 
-void Calculator::handleDel(std::stringstream& streem)
+void Calculator::handleDel(std::stringstream& stream)
 {
 	int index = 0;
-	if (!(streem >> index) || !validIndex(index))
+	if (!(stream >> index) || !validIndex(index))
 	{
 		std::cout << "Invalid usage - " << DEL_USAGE << std::endl;
 		return;

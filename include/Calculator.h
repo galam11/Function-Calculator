@@ -25,13 +25,13 @@ private:
 
     void printFunctions() const;
 
-    void handleEval(std::stringstream& streem);
-    void handleLog(std::stringstream& streem);
-    void handlePoly(std::stringstream& streem);
-    void handleAdd(std::stringstream& streem);
-    void handleMul(std::stringstream& streem);
-    void handleScale(std::stringstream& streem);
-    void handleDel(std::stringstream& streem);
+    void handleEval(std::stringstream& stream);
+    void handleLog(std::stringstream& stream);
+    void handlePoly(std::stringstream& stream);
+    void handleAdd(std::stringstream& stream);
+    void handleMul(std::stringstream& stream);
+    void handleScale(std::stringstream& stream);
+    void handleDel(std::stringstream& stream);
     void handleHelp();
     void handleExit();
 
